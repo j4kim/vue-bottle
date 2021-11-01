@@ -18,7 +18,7 @@ npm i vue-bottle
 </template>
 
 <script>
-import Bottle from './Bottle'
+import Bottle from 'vue-bottle'
 
 export default {
   components: { Bottle },
