@@ -1,19 +1,25 @@
 <template>
   <svg
     :style="{
-      width: `${size}px`,
+      width: `${size/2}px`,
       height: `${size}px`,
       paintOrder: 'stroke'
     }"
-    :viewBox="`0 0 ${boxSize} ${boxSize}`"
+    viewBox="0 0 12 24"
     ref="bottleSvg"
   >
     <mask id="bottlemask">
-      <rect fill="black" :width="boxSize" :height="boxSize" />
+      <rect fill="black" width="12" height="24" />
       <path fill="white" :d="path" />
     </mask>
     <path stroke="black" stroke-alignment="outside" fill="white" :d="path" />
-    <rect fill="black" :width="boxSize" :height="y" :y="boxSize - y" mask="url(#bottlemask)" />
+    <rect
+      fill="black"
+      width="12"
+      :height="y"
+      :y="24 - y"
+      mask="url(#bottlemask)"
+    />
   </svg>
 </template>
 
@@ -34,13 +40,12 @@ export default {
   },
 
   data: () => ({
-    path: 'M10,22A1,1 0 0,1 9,21V11C9,9 10,7.25 11,7V2.5A0.5,0.5 0 0,1 11.5,2H12.5A0.5,0.5 0 0,1 13,2.5V7C14,7.25 15,9 15,11V21A1,1 0 0,1 14,22H10Z',
-    boxSize: 24
+    path: "M3.72,23.39a1.14,1.14,0,0,1-1.14-1.13V10.86c0-2.28,1.14-4.27,2.28-4.56V1.17A.57.57,0,0,1,5.43.61H6.57a.57.57,0,0,1,.57.56V6.3c1.14.29,2.28,2.28,2.28,4.56v11.4a1.14,1.14,0,0,1-1.14,1.13Z",
   }),
 
   computed: {
     y () {
-      return this.boxSize * this.value
+      return 24 * this.value
     }
   },
 
