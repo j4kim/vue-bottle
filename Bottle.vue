@@ -36,6 +36,10 @@ export default {
     size: {
       type: [Number, String],
       default: 120
+    },
+    speed: {
+      type: Number,
+      default: 0.01
     }
   },
 
@@ -57,7 +61,7 @@ export default {
 
   methods: {
     add (velocity) {
-      let newValue = clamp(this.value - velocity/100, 0, 1)
+      let newValue = clamp(this.value - velocity * this.speed, 0, 1)
       this.$emit('input', newValue)
     }
   }
