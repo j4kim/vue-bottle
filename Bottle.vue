@@ -1,15 +1,19 @@
 <template>
   <svg
-    style="width:240px;height:240px;paint-order:stroke"
-    :viewBox="`0 0 ${size} ${size}`"
+    :style="{
+      width: `${size}px`,
+      height: `${size}px`,
+      paintOrder: 'stroke'
+    }"
+    :viewBox="`0 0 ${boxSize} ${boxSize}`"
     ref="bottleSvg"
   >
     <mask id="bottlemask">
-      <rect fill="black" :width="size" :height="size" />
+      <rect fill="black" :width="boxSize" :height="boxSize" />
       <path fill="white" :d="path" />
     </mask>
     <path stroke="black" stroke-alignment="outside" fill="white" :d="path" />
-    <rect fill="black" :width="size" :height="y" :y="size - y" mask="url(#bottlemask)" />
+    <rect fill="black" :width="boxSize" :height="y" :y="boxSize - y" mask="url(#bottlemask)" />
   </svg>
 </template>
 
@@ -22,17 +26,21 @@ export default {
     value: {
       type: [Number, String],
       default: 0
+    },
+    size: {
+      type: [Number, String],
+      default: 120
     }
   },
 
   data: () => ({
     path: 'M10,22A1,1 0 0,1 9,21V11C9,9 10,7.25 11,7V2.5A0.5,0.5 0 0,1 11.5,2H12.5A0.5,0.5 0 0,1 13,2.5V7C14,7.25 15,9 15,11V21A1,1 0 0,1 14,22H10Z',
-    size: 24
+    boxSize: 24
   }),
 
   computed: {
-    y() {
-      return this.size * this.value
+    y () {
+      return this.boxSize * this.value
     }
   },
 
