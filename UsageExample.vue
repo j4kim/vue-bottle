@@ -1,19 +1,7 @@
-# vue-bottle
-
-A custom input for Vue featuring a bottle of wine.
-
-## Install
-
-```
-npm i vue-bottle
-```
-
-## Usage
-
-```vue
 <template>
   <main>
     <bottle v-model="ratio"/>
+    <input type="number" v-model="ratio" min="0" max="1" step="0.02">
   </main>
 </template>
 
@@ -28,4 +16,3 @@ export default {
   })
 }
 </script>
-```
