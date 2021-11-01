@@ -15,6 +15,7 @@
 
 <script>
 import Hammer from 'hammerjs'
+import { clamp } from 'lodash'
 
 export default {
   data: () => ({
@@ -37,7 +38,7 @@ export default {
 
   methods: {
     add (velocity) {
-      this.ratio = this.ratio - velocity/80
+      this.ratio = clamp(this.ratio - velocity/100, 0, 1)
     }
   }
 }
