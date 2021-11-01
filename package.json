@@ -1,6 +1,6 @@
 {
   "name": "vue-bottle",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A custom input for Vue featuring a bottle of wine",
   "main": "Bottle.vue",
   "scripts": {
