@@ -13,7 +13,7 @@ npm i vue-bottle
 ```vue
 <template>
   <main>
-    <bottle v-model="ratio"/>
+    <bottle v-model="ratio" :speed="0.02"/>
   </main>
 </template>
 
