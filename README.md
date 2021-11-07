@@ -29,3 +29,7 @@ export default {
 }
 </script>
 ```
+
+## Demo
+
+https://codesandbox.io/s/vue-bottle-demo-rhnjf
